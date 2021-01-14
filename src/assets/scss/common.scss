@@ -1,0 +1,195 @@
+@charset "UTF-8";
+// 外框架
+.main{
+  background-color: $bg--color;
+}
+// 侧边导航
+.main-sidebar{
+  height: $content--height;
+  width: $sidebar--width;
+  box-shadow: $box--shadow;
+  background-color: #FFFFFF;
+  border-right: 1px solid #efefef;
+  position: relative;
+  &--navbar{
+    border-bottom: 1px solid #efefef;
+    height: $content--height;
+    box-sizing: border-box;
+    position: relative;
+  }
+  &__brand{
+    margin: 0;
+    color: $--color-primary;
+    height: $navbar--height;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #efefef;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  &--menu{
+    position: absolute;
+    top: calc(#{$navbar--height} + 1px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .el-menu{
+      border-right: 0;
+    }
+  }
+  &__brand-lg{
+    color: $--color-primary;
+    display: block;
+  }
+  &__brand-mini{
+    color: $--color-primary;
+    display: none;
+  }
+  .aui-sidebar__menu-icon{
+    font-size: 20px;
+    margin-right: 5px;
+  }
+}
+
+// 顶部导航
+.main-navbar{
+  height: $navbar--height;
+  box-shadow: $box--shadow;
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: $content--fill-width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .left-btn{
+    font-size: 26px;
+    padding: 20px;
+    color: #999999;
+    cursor: pointer;
+    transform: rotate(180deg);
+  }
+  .main-navbar--fold{
+    transform: rotate(0deg);
+  }
+  .right-btn{
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    .icon-svg{
+      font-size: 40px;
+    }
+  }
+}
+
+// 显示内容
+.main-content{
+  height: $content--fill-height-tabs;
+  position: fixed;
+  top: $navbar--height;
+  right: 0;
+  width: $content--fill-width;
+  &--tabs-tools {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    z-index: 931;
+    min-width: $content--tabs-header-height;
+    height: $content--tabs-header-height + 2px;
+    text-align: center;
+    font-size: 16px;
+    line-height: $content--tabs-header-height;
+    background-color: $bg--color;
+    cursor: pointer;
+    .el-icon-arrow-down{
+      padding: 10px 12px;
+    }
+  }
+  .el-tabs__nav-wrap{
+    background-color: #FFFFFF;
+    &:after{
+      background-color: #ffffff;
+    }
+  }
+  .tabs-icon-nav {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+  }
+  .el-tabs__item{
+    height: 38px;
+    padding: 0 15px;
+    line-height: 38px;
+    border: 0;
+    color: #606266;
+  }
+  .el-tabs__header{
+    position: fixed;
+    top: 64px!important;
+    left: 256px;
+    right: 0;
+    height: $content--tabs-header-height;
+    z-index: 930;
+    padding: 0 55px 0 15px;
+    margin: 0;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+    background-color: #fff;
+    -webkit-transition: left .3s;
+    transition: left .3s;
+    border-top: 1px solid #efefef;
+    border-left: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+  }
+  .el-tabs__content{
+    min-height: calc(#{$content--fill-height-tabs} - #{$navbar--height} - 6px);
+    padding: 15px;
+    margin-top: $content--tabs-header-height + 2px;
+  }
+  .el-tab-pane{
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: $box--shadow;
+    border-radius: 3px;
+    min-height: calc(#{$content--fill-height-tabs} - #{$navbar--height} - 6px - 40px);
+  }
+}
+
+
+.main--fold{
+  .main-sidebar{
+    width: $sidebar--width-fold;
+    &__brand-lg{
+      color: $--color-primary;
+      display: none;
+    }
+    &__brand-mini{
+      color: $--color-primary;
+      display: block;
+    }
+  }
+  .main-navbar{
+    width: $content--fill-width-fold;
+  }
+  .main-content{
+    width: $content--fill-width-fold;
+  }
+  .el-tabs__header{
+    left: $sidebar--width-fold;
+  }
+}
+
+
+// 图标设置
+.icon-svg{
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+  overflow: hidden;
+}
