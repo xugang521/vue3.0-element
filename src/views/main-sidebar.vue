@@ -2,7 +2,7 @@
   <div :class="['main-sidebar']">
     <div class="main-sidebar--navbar">
       <h1 class="main-sidebar__brand" @click="$router.push({ name: 'home' })">
-        <a class="main-sidebar__brand-lg" href="javascript:;">管理后台模板</a>
+        <a class="main-sidebar__brand-lg" href="javascript:;">管理后台模板testNetlify</a>
         <a class="main-sidebar__brand-mini" href="javascript:;">模板</a>
       </h1>
     </div>
